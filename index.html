@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<style>
+	.bold{
+		font-weight: bolder;
+	}
+	h3{
+		color: #6f0b82;
+	}
+	.pdy{
+		padding: 30px;
+		border: 4px solid #6f0b82 !important; 
+		background-color: #f7d5d5;
+	}
+	input{
+		height: 70px;
+		font-size: 30px;
+		color: #6f0b82;
+		background-color: white;
+		font-weight: bolder;
+		border-radius: 15px;
+	}
+	.border{
+		border: 4px solid #6f0b82 !important; 
+		width: 100%;
+		outline: none;
+		border-radius: 10px;
+	}
+	.button{
+		width: 100%;
+		padding: 5px;
+		height: 50px;
+		color: white;
+		background-color: #6f0b82 ;
+		border-color: #6f0b82;
+		outline: none;
+		font-size: 20px;
+		font-weight: bolder;
+		  box-shadow: 0 10px #999;
+	}
+	
+
+</style>
+<body>
+<br>
+<div class="container">
+	
+
+<div class="row">
+	<div class="col-lg-4">
+		
+	</div>
+	<div class="col-lg-4 col-sm-9">
+	    <h3 class="bold">CALCULATER</h3>
+		<br><br>
+		<div class="fromstyle  text-center">
+	<form name="forms" class="border pdy">
+		<input class="border" type="text" name="answer" disabled="text"><br><br>
+
+       <div class="row">
+       	<div class="col-lg-3 col-sm-3">
+		<input class="button" type="button" value="1" name="btn1" onclick="display(btn1.value)" >
+       		
+       	</div>
+       	<div class="col-lg-3 col-sm-3">
+		<input class="button" type="button" value="2" name="btn2" onclick="display(btn2.value)" >
+       		
+       	</div>
+       	<div class="col-lg-3 col-sm-3">
+		<input class="button" type="button" value="3" name="btn3" onclick="display(btn3.value)" >
+       		
+       	</div>
+       	<div class="col-lg-3 col-sm-3">
+		<input class="button" type="button" value="+" name="btnplus" onclick="display(btnplus.value)">
+       		
+       	</div>
+		</div>
+		<br>
+		<br>
+        <div class="row">
+       	<div class="col-lg-3 col-sm-3">
+		<input class="button" type="button" value="4" name="btn4" onclick="display(btn4.value)"  >
+	    </div>
+       	<div class="col-lg-3 col-sm-3">
+		<input class="button" type="button" value="5" name="btn5" onclick="display(btn5.value)"  >
+	    </div>
+       	<div class="col-lg-3 col-sm-3">
+		<input class="button" type="button" value="6" name="btn6" onclick="display(btn6.value)"  >
+	    </div>
+       	<div class="col-lg-3 col-sm-3">
+		<input class="button" type="button" value="-" name="btnmin" onclick="display(btnmin.value)"  ></div>
+	    </div>
+		<br>
+		<br>
+        <div class="row">
+       	<div class="col-lg-3 col-sm-3">
+		<input class="button" type="button" value="7" name="btn7" onclick="display(btn7.value)" >
+	    </div>
+       	<div class="col-lg-3 col-sm-3">
+		<input class="button" type="button" value="8" name="btn8" onclick="display(btn8.value)" >
+	    </div>
+       	<div class="col-lg-3 col-sm-3">
+		<input class="button" type="button" value="9" name="btn9" onclick="display(btn9.value)" >
+	    </div>
+       	<div class="col-lg-3 col-sm-3">
+		<input class="button" type="button" value="*" name="btnmul" onclick="display(btnmul.value)" ></div>
+		</div>
+		<br>
+		<br>
+        <div class="row">
+       	<div class="col-lg-3 col-sm-3">
+		<input class="button" type="button" value="." name="btndot" onclick="display(btndot.value)" >
+	    </div>
+       	<div class="col-lg-3 col-sm-3">
+		<input class="button" type="button" value="0" name="btn0" onclick="display(btn0.value)" >
+	    </div>
+       	<div class="col-lg-3 col-sm-3">
+		<input class="button" type="button" value="/" name="btndiv" onclick="display(btndiv.value)" ></div>
+       	<div class="col-lg-3 col-sm-3">
+		<input class="button" type="button" value="=" onclick="forms.answer.value=eval(forms.answer.value)" >
+	    </div>
+        </div>
+		<br>
+		<br>
+		<div class="row">
+       	<div class="col-lg-6 col-sm-6">
+        <input type="button" class="button" onclick="forms.answer.value=' '" value="Clear"/>
+        </div>
+       	<div class="col-lg-6 col-sm-6">
+        <input class="button" type="button" value="Delete"  onclick="backSpace()"/>
+        </div>
+		</div>
+	</form>
+	
+</div>
+
+		
+	</div>
+	<div class="col-lg-4">
+		
+	</div>
+	 
+</div>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	function display(n){
+		forms.answer.value +=(n);
+
+	}
+function backSpace() {
+  var number = forms.answer.value; 
+  var len = number.length - 1;
+  var newNumber = number.substring( 0, len );
+  forms.answer.value = newNumber;
+}
+
+</script>
+</html>
